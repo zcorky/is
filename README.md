@@ -1,7 +1,7 @@
 # is
 
 [![NPM version](https://img.shields.io/npm/v/@zcorky/is.svg?style=flat)](https://www.npmjs.com/package/@zcorky/is)
-[![Coverage Status](https://img.shields.io/coveralls/@zcorky/is.svg?style=flat)](https://coveralls.io/r/@zcorky/is)
+[![Coverage Status](https://img.shields.io/coveralls/zcorky/is.svg?style=flat)](https://coveralls.io/r/zcorky/is)
 [![Dependencies](https://david-dm.org/@zcorky/is/status.svg)](https://david-dm.org/@zcorky/is)
 [![Build Status](https://travis-ci.com/zcorky/is.svg?branch=master)](https://travis-ci.com/zcorky/is)
 ![license](https://img.shields.io/github/license/zcorky/is.svg)
