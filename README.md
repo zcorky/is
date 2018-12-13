@@ -7,7 +7,7 @@
 ![license](https://img.shields.io/github/license/zcorky/is.svg)
 [![issues](https://img.shields.io/github/issues/zcorky/is.svg)](https://github.com/zcorky/is/issues)
 
-> A simple TypeCheck lib
+> A TypeCheck lib
 
 ## Install
 
@@ -22,21 +22,41 @@ $ npm install @zcorky/is
 import * as is from '@zcorky/is';
 
 // primitive
+is.nul(null);
 is.undefined(undefined);
 is.string('');
 is.number(1);
 is.boolean(false);
 is.symbol(Symbol());
 
-// functional
+// primitive
+is.primitive(true);
+
+// array
+is.array([]);
+
+// function
+is.func(() => null);
+
+// object
 is.object({});
-is.array([]); // Array.isArray
-is.primitive(true); // null | undefined | string | number | boolean | symbol
-is.promise(promise); // promise or promiseLike
+
+// promise
+is.promise(promise);
+
+// date
+is.date(new Date());
+is.date(+ new Date());
+is.date(new Date().toString());
 
 // integer
-is.integer(10); // Number.isInteger
-is.safeInteger(Math.pow(2, 53) - 1); // Number.isSafeInteger
+is.integer(10);
+is.int(10);
+is.safeInteger(Math.pow(2, 53) - 1);
+is.safeInt(Math.pow(2, 53) - 1);
+
+// float
+is.float(10.1);
 ```
 
 ### Relatived

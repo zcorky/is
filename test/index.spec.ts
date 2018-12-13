@@ -8,6 +8,7 @@ describe('is', () => {
       expect(is.undefined(undefined)).to.be.equal(true);
     });
 
+    // test string
     it('string', () => {
       expect(is.string('string')).to.be.equal(true);
     });
@@ -47,6 +48,18 @@ describe('is', () => {
       expect(is.array(Symbol())).to.be.equal(false);
     });
 
+    it('function', () => {
+      const fn = () => null;
+      expect(is.func([])).to.be.equal(false);
+      expect(is.func(null)).to.be.equal(false);
+      expect(is.func(undefined)).to.be.equal(false);
+      expect(is.func('')).to.be.equal(false);
+      expect(is.func(1)).to.be.equal(false);
+      expect(is.func(true)).to.be.equal(false);
+      expect(is.func(Symbol())).to.be.equal(false);
+      expect(is.func(fn)).to.be.equal(true);
+    });
+
     it('primitive', () => {
       expect(is.primitive(null)).to.be.equal(true);
       expect(is.primitive(undefined)).to.be.equal(true);
@@ -80,6 +93,28 @@ describe('is', () => {
     });
   });
 
+  describe('Date', () => {
+    it('date should be date', () => {
+      expect(is.date(new Date())).to.be.equal(true);
+      expect(is.date(new Date())).to.be.equal(true);
+      expect(is.date(new Date())).to.be.equal(true);
+      expect(is.date(new Date())).to.be.equal(true);
+      expect(is.date(new Date())).to.be.equal(true);
+    });
+
+    it('date string should be date', () => {
+      expect(is.date(new Date().toString())).to.be.equal(true);
+      expect(is.date(new Date().toLocaleDateString())).to.be.equal(true);
+      expect(is.date(new Date().toISOString())).to.be.equal(true);
+      expect(is.date(new Date().toUTCString())).to.be.equal(true);
+      expect(is.date(new Date().toISOString())).to.be.equal(true);
+    });
+
+    it('timestamps should be date', () => {
+      expect(is.date(8)).to.be.equal(true);
+    });
+  });
+
   describe('Integer', () => {
     it('integer', () => {
       expect(is.integer(10)).to.be.equal(true);
@@ -93,6 +128,34 @@ describe('is', () => {
       expect(is.safeInteger(-Math.pow(2, 53))).to.be.equal(false);
       expect(is.safeInteger(Math.pow(2, 53) - 1)).to.be.equal(true);
       expect(is.safeInteger(-Math.pow(2, 53) + 1)).to.be.equal(true);
+    });
+
+    it('int (alias of integer)', () => {
+      expect(is.int(10)).to.be.equal(true);
+      expect(is.int(-10)).to.be.equal(true);
+      expect(is.int(0)).to.be.equal(true);
+      expect(is.int(10.1)).to.be.equal(false);
+    });
+
+    it('safeInt (alias of safeInteger)', () => {
+      expect(is.safeInt(Math.pow(2, 53))).to.be.equal(false);
+      expect(is.safeInt(-Math.pow(2, 53))).to.be.equal(false);
+      expect(is.safeInt(Math.pow(2, 53) - 1)).to.be.equal(true);
+      expect(is.safeInt(-Math.pow(2, 53) + 1)).to.be.equal(true);
+    });
+  });
+
+  describe('float', () => {
+    it('right', () => {
+      const n = 1.2;
+      const m = 1;
+
+      expect(is.number(n)).to.be.equal(true);
+      expect(is.number(m)).to.be.equal(true);
+      expect(is.integer(n)).to.be.equal(false);
+      expect(is.integer(m)).to.be.equal(true);
+      expect(is.float(n)).to.be.equal(true);
+      expect(is.float(m)).to.be.equal(false);
     });
   });
 });
