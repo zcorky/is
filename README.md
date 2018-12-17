@@ -61,6 +61,10 @@ is.float(10.1);
 
 ### Relatived
 * [is](https://github.com/sindresorhus/is) - Type check values: is.string('🦄') //=> true
+* [joi](https://github.com/hapijs/joi) - Object schema validation.
+* [ajv](https://github.com/epoberezkin/ajv) - The fastest JSON Schema Validator.
+* [parameter](https://github.com/node-modules/parameter) - A parameter verify tools.
+* [type-is](https://github.com/jshttp/type-is) - Infer the content-type of a request.
 
 ## License
 
