@@ -173,4 +173,22 @@ describe('is', () => {
       expect(is.regExp(m)).to.be.equal(true);
     });
   });
+
+  describe('Plain Object', () => {
+    it('right', () => {
+      const p1 = {};
+      const p2 = new Object();
+      const p3 = Object.create(null);
+      const np1 = Object.create({});
+      const np2 = 1;
+      const np3 = true;
+
+      expect(is.plainObject(p1)).to.be.equal(true);
+      expect(is.plainObject(p2)).to.be.equal(true);
+      expect(is.plainObject(p3)).to.be.equal(true);
+      expect(is.plainObject(np1)).to.be.equal(false);
+      expect(is.plainObject(np2)).to.be.equal(false);
+      expect(is.plainObject(np3)).to.be.equal(false);
+    });
+  });
 });

@@ -2,7 +2,7 @@ import { TypeName } from './constants';
 
 const toString = Object.prototype.toString;
 
-const getObjectType = (value: any): TypeName | null => {
+export const getObjectType = (value: any): TypeName | null => {
   const objectName = toString.call(value).slice(8, -1);
 
   if (objectName) {
