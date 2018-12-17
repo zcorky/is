@@ -158,4 +158,19 @@ describe('is', () => {
       expect(is.float(m)).to.be.equal(false);
     });
   });
+
+  describe('RegExp', () => {
+    it('right', () => {
+      const n = /^a$/i;
+      const m = new RegExp('^a$', 'i');
+      const l = 1;
+
+      expect(is.number(l)).to.be.equal(true);
+      expect(is.regExp(l)).to.be.equal(false);
+      expect(is.number(n)).to.be.equal(false);
+      expect(is.regExp(n)).to.be.equal(true);
+      expect(is.number(m)).to.be.equal(false);
+      expect(is.regExp(m)).to.be.equal(true);
+    });
+  });
 });

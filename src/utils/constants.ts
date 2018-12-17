@@ -11,6 +11,7 @@ export const enum TypeName {
   Array = 'Array',
   Error = 'Error',
   Promise = 'Promise',
+  RegExp = 'RegExp',
 }
 
 export const PrimitiveTypes = new Set([

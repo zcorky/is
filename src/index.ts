@@ -17,3 +17,4 @@ export { integer, integer as int } from './types/integer';
 export { safeInteger, safeInteger as safeInt } from './types/safeInteger';
 export { float, float as double } from './types/float';
 export { primitive } from './types/primitive';
+export { regExp } from './types/regExp';
