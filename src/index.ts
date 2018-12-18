@@ -19,3 +19,6 @@ export { float, float as double } from './types/float';
 export { primitive } from './types/primitive';
 export { regExp } from './types/regExp';
 export { plainObject } from './types/plainObject';
+
+// export typings
+export * from './typings';
