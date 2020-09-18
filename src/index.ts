@@ -20,5 +20,7 @@ export { primitive } from './types/primitive';
 export { regExp } from './types/regExp';
 export { plainObject } from './types/plainObject';
 
+export * from './extends';
+
 // export typings
 export * from './typings';
